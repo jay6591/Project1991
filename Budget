@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include "Sort.h"
+/*This Function Calculates the maximum profit one can generate by selling their item. For this it takes into account what all the customers 
+  are willing to pay and then compares the perfect price which would give maximum profit based on how many users are ready to buy at that 
+  price point*/
+  
+typrdef struct Budget
+{
+  long long Val;
+  Budget *next;
+}budget;
+
+void main()
+{
+  long long CustNum;
+  budget *CustBudget;
+  budget *NextCust;
+  long long counter=0;
+  long long Max=0, Current=0;
+  Printf("Enter the number of customer");
+  scanf("%lld",&CustNum);
+  NextCust=CustBudget;
+  for(counter =0;counter <CustNum;counter++)
+  {
+    scanf("%lld",NextCust->Val);
+    NextCust=NextCust->next;
+  }
+  
+  //BubbleSort(CustBudget,CustNum);
+  NextCust = CustBudget;
+  
+  for(counter=0;counter<CustNum;counter++)
+  {
+    Current = NextCust->Val * (CustNum - counter);
+    if(Current > Max)
+      Max = Current;
+  }
+  
+  printf("Max value is %lld" Max);
+  
+}
