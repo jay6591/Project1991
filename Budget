@@ -39,3 +39,31 @@ void main()
   printf("Max value is %lld" Max);
   
 }
+
+/*
+The code should work in following way
+int main(void) {
+	int CustNum;
+  int CustBudget[10]={0};
+  
+  int counter=0;
+  int Max=0, Current=0;
+  printf("Enter the number of customer");
+  scanf("%d",&CustNum);
+  
+  for(counter =0;counter <CustNum;counter++)
+  {
+    scanf("%d",&CustBudget[counter]);
+  }
+  
+  for(counter=0;counter<CustNum;counter++)
+  {
+    Current = CustBudget[counter] * (CustNum - counter);
+    if(Current > Max)
+      Max = Current;
+  }
+  
+  printf("Max value is %d", Max);
+	return 0;
+}
+*/
